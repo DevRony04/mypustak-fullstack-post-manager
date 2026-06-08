@@ -1,13 +1,16 @@
 # MyPustak Post Manager
 
-A complete, interview-ready Full Stack Post Management Application built for the **MyPustak Full Stack Developer Hiring Challenge**. This application features a robust FastAPI backend with in-memory thread-safe state storage and validation, and a beautiful React + Vite + TypeScript frontend styled using Tailwind CSS.
+A complete, production-ready Full Stack Post Management Application built for the **MyPustak Full Stack Developer Hiring Challenge**. This application features a robust FastAPI backend with in-memory thread-safe state storage and validation, and a beautiful React + Vite + TypeScript frontend powered by Tailwind CSS.
+
+The application has been fully refactored to utilize Vite environment variables, enabling zero-code config changes when moving from local development to production hosting (e.g., Render).
 
 ---
 
 ## Key Features
 
+- **Dynamic Environment Configuration**: The frontend integrates Vite-native environment files (`.env`) to dynamically configure the API base URL without hardcoded localhost settings.
 - **In-Memory Thread-Safe Data Store**: Serves pre-seeded data and safely manages writes and deletions concurrently.
-- **Strict Typing**: Comprehensive TypeScript typing throughout the frontend (APIs, components, models).
+- **Strict Typing**: Comprehensive TypeScript typing throughout the frontend (APIs, components, models) with strict compiler checks.
 - **Whitespace Sanitization**: Field level auto-trimming and empty validation in both frontend form inputs and backend Pydantic models.
 - **Premium User Experience (UX)**:
   - Gradient typography header.
@@ -58,6 +61,7 @@ mypustak-fullstack-post-manager/
 │   │   │
 │   │   ├── App.tsx
 │   │   ├── main.tsx
+│   │   ├── vite-env.d.ts
 │   │   └── index.css
 │   │
 │   ├── index.html
@@ -74,7 +78,25 @@ mypustak-fullstack-post-manager/
 
 ## Installation & Setup
 
-### 1. Backend Setup
+### 1. Environment Configurations (Frontend)
+
+To point the frontend to the correct backend host:
+
+1. Create a `.env` file inside the `frontend/` directory (if not already present):
+   ```
+   frontend/.env
+   ```
+2. Populate the environment variable:
+   - For **Local Development**:
+     ```env
+     VITE_API_URL=http://localhost:8000
+     ```
+   - For **Production/Hosted Deployment**:
+     ```env
+     VITE_API_URL=https://mypustak-fullstack-post-manager.onrender.com
+     ```
+
+### 2. Backend Setup
 
 Ensure you have Python 3.9+ installed.
 
@@ -92,7 +114,7 @@ Ensure you have Python 3.9+ installed.
    ```
 4. The server runs at **`http://localhost:8000`**. You can view the automated Swagger API docs at **`http://localhost:8000/docs`**.
 
-### 2. Frontend Setup
+### 3. Frontend Setup
 
 Ensure you have Node.js 18+ installed.
 
