@@ -8,11 +8,12 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS for frontend communication
-# Allowed origins can be specified for security, but using wildcard/broad match for this challenge
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://mypustak-fullstack-post-manager.netlify.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
