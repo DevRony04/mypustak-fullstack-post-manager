@@ -1,7 +1,26 @@
-node_modules
-dist
+# Python
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node
+
+node_modules/
+dist/
+
+# Environment Variables
+
 .env
 .env.local
 .env.production
-backend/__pycache__/
-*.pyc
+
+# IDE
+
+.vscode/
+.idea/
+
+# OS
+
+.DS_Store
