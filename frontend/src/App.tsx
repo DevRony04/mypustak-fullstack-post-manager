@@ -21,7 +21,7 @@ export const App: React.FC = () => {
       setPosts(data);
     } catch (err: any) {
       console.error(err);
-      setError('Failed to connect to the backend API. Please ensure the server is running on http://localhost:8000.');
+      setError(`Failed to connect to the backend API at ${import.meta.env.VITE_API_URL || 'http://localhost:8000'}. Please ensure the server is running.`);
     } finally {
       setLoading(false);
     }
