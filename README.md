@@ -2,13 +2,17 @@
 
 A complete, production-ready Full Stack Post Management Application built for the **MyPustak Full Stack Developer Hiring Challenge**. This application features a robust FastAPI backend with in-memory thread-safe state storage and validation, and a beautiful React + Vite + TypeScript frontend powered by Tailwind CSS.
 
-The application has been fully refactored to utilize Vite environment variables, enabling zero-code config changes when moving from local development to production hosting (e.g., Render).
+### Live Deployments
+- **Frontend App (Netlify)**: [https://mypustak-fullstack-post-manager.netlify.app/](https://mypustak-fullstack-post-manager.netlify.app/)
+- **Backend API (Render)**: [https://mypustak-fullstack-post-manager.onrender.com](https://mypustak-fullstack-post-manager.onrender.com)
+
+The application utilizes Vite-native environment variables, enabling zero-code configuration changes when moving from local development to production hosting.
 
 ---
 
 ## Key Features
 
-- **Dynamic Environment Configuration**: The frontend integrates Vite-native environment files (`.env`) to dynamically configure the API base URL without hardcoded localhost settings.
+- **Dynamic Environment Configuration**: The frontend integrates Vite environment files (`.env`) to dynamically configure the API base URL without hardcoded localhost settings.
 - **In-Memory Thread-Safe Data Store**: Serves pre-seeded data and safely manages writes and deletions concurrently.
 - **Strict Typing**: Comprehensive TypeScript typing throughout the frontend (APIs, components, models) with strict compiler checks.
 - **Whitespace Sanitization**: Field level auto-trimming and empty validation in both frontend form inputs and backend Pydantic models.
